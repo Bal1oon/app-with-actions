@@ -1,14 +1,16 @@
 name: SCP files From Actions To EC2
-on: push
+on:
+  push:
+    branches: [ "main" ]
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-        # - name: Download app.jar Artifact
-        #   uses: actions/download-artifact@v3
-        #   with:
-        #     name: app.jar
+        - name: Download app.jar Artifact
+          uses: actions/download-artifact@v3
+          with:
+            name: app.jar
           
         - name: From Github Actions to AWS EC2 through SCP
           uses: appleboy/scp-action@v0.1.7
