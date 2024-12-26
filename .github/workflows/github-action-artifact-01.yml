@@ -60,7 +60,7 @@ jobs:
         script: |
            rm -rf /home/ubuntu/app/deploy
            mkdir /home/ubuntu/app/deploy
-           mv /home/ubuntu/app/app.jar /home/ubuntu/app/deploy/app.jar
+           mv /home/ubuntu/app/target/app.jar /home/ubuntu/app/deploy/app.jar
            cd /home/ubuntu/app/deploy
            sudo fuser -k -n tcp 8080 || true
            nohup java -jar app.jar > ./output.log 2>&1 &
