@@ -62,6 +62,8 @@ jobs:
            mkdir /home/ubuntu/app/deploy
            mv /home/ubuntu/app/target/app.jar /home/ubuntu/app/deploy
            cd /home/ubuntu/app/deploy
+           ls
            sudo fuser -k -n tcp 8080 || true
            nohup java -jar app.jar > ./output.log 2>&1 &
+           jobs
            rm -rf /home/ubuntu/app
