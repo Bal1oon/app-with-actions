@@ -1,9 +1,9 @@
 name: SCP files From Actions To EC2
-on:
-  workflow_run:
-    workflows: ["Artifact workflow-01"]
-    types:
-      - completed
+on: workflow_dispatch
+#   workflow_run:
+#     workflows: ["Artifact workflow-01"]
+#     types:
+#       - completed
 jobs:
   build:
     name: Build
