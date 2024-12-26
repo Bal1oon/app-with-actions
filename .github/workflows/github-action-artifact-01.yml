@@ -8,11 +8,11 @@
 
 name: Artifact workflow-01
 
-on: workflow_dispatch
-  # push:
-  #   branches: [ "main" ]
-  # pull_request:
-  #   branches: [ "main" ]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -39,4 +39,4 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: app.jar
-        path: ./target/*.jar
+        path: ./target/app.jar
