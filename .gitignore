@@ -118,9 +118,6 @@ local.properties
 hs_err_pid*
 replay_pid*
 
-# Properties
-*.properties
-
 # MacOS
 *.icloud
 .DS_Store
