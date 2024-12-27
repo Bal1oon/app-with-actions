@@ -82,4 +82,5 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         script: |
-          docker-compose up -d --pull
+          docker-compose pull
+          docker-compose up -d
