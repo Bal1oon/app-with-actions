@@ -61,7 +61,7 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         script: |
-          docker ps -q | xargs -r docker stop
-          docker ps -aq | xargs -r docker rm
-          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/app-with-actions:latest
-          docker run -d -p 8080:8080 ${{ secrets.DOCKERHUB_USERNAME }}/app-with-actions:latest
+          sudo docker ps -q | xargs -r docker stop
+          sudo docker ps -aq | xargs -r docker rm
+          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/app-with-actions:latest
+          sudo docker run -d -p 8080:8080 ${{ secrets.DOCKERHUB_USERNAME }}/app-with-actions:latest
