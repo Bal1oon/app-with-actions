@@ -89,7 +89,7 @@ jobs:
           echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}" >> .env
           echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
           echo "EC2_USERNAME=${{ secrets.EC2_USERNAME }}" >> .env
-          echo "DATABASE_URL"=${{ secrets.DATABASE_URL }} >> .env
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
           
           docker-compose --env-file .env pull
           docker-compose --env-file .env up -d
