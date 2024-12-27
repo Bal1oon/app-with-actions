@@ -88,6 +88,7 @@ jobs:
           echo "MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}" >> .env
           echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}" >> .env
           echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
+          echo "EC2_USERNAME=${{ secrets.EC2_USERNAME }}" >> .env
           
           docker-compose --env-file .env pull
           docker-compose --env-file .env up -d
