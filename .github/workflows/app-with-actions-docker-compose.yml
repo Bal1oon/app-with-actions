@@ -89,4 +89,5 @@ jobs:
           echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}" >> .env
           echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
           
-          docker-compose --env-file .env up -d --pull
+          docker-compose --env-file .env pull
+          docker-compose --env-file .env up -d
