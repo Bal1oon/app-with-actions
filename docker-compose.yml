@@ -3,15 +3,15 @@ services:
     container_name: mysql-server
     image: mysql:latest
     ports:
-      - ${{ secrets.DATABASE_PORT }}:3306
+      - ${DATABASE_PORT}:3306  # 환경 변수로 변경
     volumes:
-      - /home/${{ secrets.EC2_USERNAME }}/data/mysql:/var/lib/mysql
-      - /home/${{ secrets.EC2_USERNAME }}/data/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - /home/${EC2_USERNAME}/data/mysql:/var/lib/mysql
+      - /home/${EC2_USERNAME}/data/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
-      MYSQL_ROOT_PASSWORD: ${{ secrets.DATABASE_ROOT_PASSWORD }}
-      MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
-      MYSQL_USER: ${{ secrets.DATABASE_USERNAME }}
-      MYSQL_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${DATABASE_USERNAME}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
     networks:
       - app-network
     healthcheck:
@@ -22,7 +22,7 @@ services:
 
   backend:
     container_name: app
-    image: ${{ secrets.DOCKERHUB_USERNAME }}/app-with-actions:latest
+    image: ${DOCKERHUB_USERNAME}/app-with-actions:latest  # 환경 변수로 변경
     ports:
       - 8080:8080
     environment:
