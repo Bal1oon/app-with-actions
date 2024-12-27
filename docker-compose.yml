@@ -27,6 +27,10 @@ services:
       - 8080:8080
     environment:
       MYSQL_HOST: db
+      DATABASE_URL: ${DATABASE_URL}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
     depends_on:
       db:
         condition: service_healthy
