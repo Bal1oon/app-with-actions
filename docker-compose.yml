@@ -6,6 +6,7 @@ services:
       - ${{ secrets.DATABASE_PORT }}:3306
     volumes:
       - /home/${{ secrets.EC2_USERNAME }}/data/mysql:/var/lib/mysql
+      - /home/${{ secrets.EC2_USERNAME }}/data/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       MYSQL_ROOT_PASSWORD: ${{ secrets.DATABASE_ROOT_PASSWORD }}
       MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
