@@ -64,4 +64,4 @@ jobs:
           sudo docker ps -q | xargs -r docker stop
           sudo docker ps -aq | xargs -r docker rm
           sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/app-with-actions:latest
-          sudo docker run -d -p 8080:8080 ${{ secrets.DOCKERHUB_USERNAME }}/app-with-actions:latest
+          sudo docker run -d -p 8080:8080 --name app ${{ secrets.DOCKERHUB_USERNAME }}/app-with-actions:latest
