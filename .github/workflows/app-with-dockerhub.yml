@@ -19,7 +19,7 @@ jobs:
       run: |
         cd ./src/main/resources
         touch ./application.properties
-        echo "${{ secrets.PROPERTIES }}" > ./application.properties
+        echo "${{ secrets.PROPERTIES2 }}" > ./application.properties
       shell: bash
 
     - name: Build with Maven
